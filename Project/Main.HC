@@ -1,6 +1,10 @@
-"Hello from a Mac-edited HolyC file!\n";
+"Hello from a Mac-edited HolyC file\n";
 
-I64 i = 32;
-I64 x = i + 3 * (420 / 2);
-Print("x = %d\n", x);
 
+
+F64 DetectUptime() {
+  F64 uptime = tS;
+  return uptime;
+}
+
+Print("Uptime: %f seconds\n", DetectUptime());
