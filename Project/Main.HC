@@ -1,5 +1,15 @@
 "Hello from a Mac-edited HolyC file\n";
 
+
+U8 *logo = "
+ _____                    _       ___  ____
+|_   _|__ _ __ ___  _ __ | | ___ / _ \/ ___|
+  | |/ _ \ '_ ` _ \| '_ \| |/ _ \ | | \___ \
+  | |  __/ | | | | | |_) | |  __/ |_| |___) |
+  |_|\___|_| |_| |_| .__/|_|\___|\___/|____/
+                   |_|
+";
+
 F64 DetectUptime() {
   F64 uptime = tS;
   return uptime;
@@ -36,7 +46,7 @@ I64 UsedRAM() {
 }
 
 
-Print("OS Name: %s\n", OSName());
+Print(logo);
 Print("Uptime: %f seconds\n", DetectUptime());
 Print("RAM: %d MB / %d MB\n", UsedRAM(), TotalRAM());
 Print("CPU Cores: %d\n", GetCPUCores());
