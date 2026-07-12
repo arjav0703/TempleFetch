@@ -1,7 +1,5 @@
 "Hello from a Mac-edited HolyC file\n";
 
-
-
 F64 DetectUptime() {
   F64 uptime = tS;
   return uptime;
@@ -21,6 +19,12 @@ I64 TotalRAM() {
   return ram_total_mb;
 }
 
+
+I64 GetCPUCores() {
+  I64 cores = mp_cnt;
+  return cores;
+}
+
 I64 UsedRAM() {
   I64 ram_used = sys_code_bp->used_u8s;
   if (sys_data_bp) {
@@ -31,8 +35,8 @@ I64 UsedRAM() {
   return ram_used_mb;
 }
 
-Print("RAM: %d MB / %d MB\n", UsedRAM(), TotalRAM());
 
 Print("OS Name: %s\n", OSName());
-
 Print("Uptime: %f seconds\n", DetectUptime());
+Print("RAM: %d MB / %d MB\n", UsedRAM(), TotalRAM());
+Print("CPU Cores: %d\n", GetCPUCores());
